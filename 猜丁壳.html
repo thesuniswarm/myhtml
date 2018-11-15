@@ -36,7 +36,6 @@
 </head>
 <body onload="go()">
 <audio id="bgm" src="bgm/5.mp3" preload="preload" autoplay="autoplay" loop="loop"></audio>
-	<p id="buttonbgm" onclick="conbgm()">暂停后不能继续播放</p>
 <div id="container"> 
      <div id="mine">
          <h1>我的出招</h1>  
@@ -58,8 +57,6 @@
 </div>
 </body>
 <script> 
-	function conbgm() {
-	document.getElementById("bgm").pause();
 var r;
 function rock() {
 	document.getElementById("myChoice").innerHTML="<img src=images/1.jpg>";
