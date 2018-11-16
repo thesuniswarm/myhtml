@@ -56,6 +56,82 @@
      <div id="result">来过翻两招</div>
 </div>
 </body>
-<script src="js/caidingke.js"> 
+<script>
+var r;
+function rock() {
+	r = 3 * Math.random();
+	document.getElementById("myChoice").innerHTML="<img src=1.jpg>";
+	var computerResult = computerChoice();
+	judge("rock",computerResult);
+}
+function scissors() {
+	r = 3 * Math.random();
+	document.getElementById("myChoice").innerHTML="<img src=2.jpg>";
+	var computerResult = computerChoice();
+	judge("scissors",computerResult);
+}
+function paper() {
+	r = 3 * Math.random();
+	document.getElementById("myChoice").innerHTML="<img src=3.jpg>";
+	var computerResult = computerChoice();
+	judge("paper",computerResult);
+}
+
+function judge(myChoice,computerResult) {
+	if(myChoice=="rock"){
+    if(computerResult=="rock"){
+		document.getElementById("result").innerHTML="draw";
+	}
+	else if(computerResult=="scissors"){
+		document.getElementById("result").innerHTML="win";
+	}
+	else if(computerResult=="paper"){
+		document.getElementById("result").innerHTML="lose";
+	}
+	}
+
+	else if(myChoice=="scissors"){
+    if(computerResult=="rock"){
+		document.getElementById("result").innerHTML="lose";
+	}
+	else if(computerResult=="scissors"){
+		document.getElementById("result").innerHTML="draw";
+	}
+	else if(computerResult=="paper"){
+		document.getElementById("result").innerHTML="win";
+	}
+	}
+
+	else if(myChoice=="paper"){
+    if(computerResult=="rock"){
+		document.getElementById("result").innerHTML="win";
+	}
+	else if(computerResult=="scissors"){
+		document.getElementById("result").innerHTML="lose";
+	}
+	else if(computerResult=="paper"){
+		document.getElementById("result").innerHTML="draw";
+	}
+	}
+
+}
+
+function go(){
+	 
+}
+function computerChoice() {
+	if(r<1){
+		document.getElementById("computerChoice").innerHTML="<img src=1.jpg>";
+		return "rock";
+	}
+	else if (r<2) {
+		document.getElementById("computerChoice").innerHTML="<img src=2.jpg>";
+	    return "scissors";
+	}
+	else(){
+		document.getElementById("computerChoice").innerHTML="<img src=3.jpg>";
+	    return "paper";
+	}
+}
 </script>
 </html>
