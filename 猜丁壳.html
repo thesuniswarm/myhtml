@@ -42,9 +42,9 @@
          <div id="myChoice">
          <img src="images/4.jpg"/>
          </div>
-         <input type="button" value="石头" onclick="rock()"/>
-         <input type="button" value="剪刀" onclick="scissors()"/>
-         <input type="button" value="布" onclick="paper()"/>
+         <input type="button" value="石头" onclick="shitou()"/>
+         <input type="button" value="剪刀" onclick="jiandao()"/>
+         <input type="button" value="布" onclick="bu()"/>
 
      </div>
      <div id="computer"> 
@@ -53,85 +53,71 @@
          <img src="images/4.jpg"/>
          </div>
      </div>
-     <div id="result">来过翻两招</div>
+     <div id="jieguo">来过翻两招</div>
 </div>
 </body>
-<script>
+<script> 
 var r;
-function rock() {
-	r = 3 * Math.random();
-	document.getElementById("myChoice").innerHTML="<img src=1.jpg>";
-	var computerResult = computerChoice();
-	judge("rock",computerResult);
-}
-function scissors() {
-	r = 3 * Math.random();
-	document.getElementById("myChoice").innerHTML="<img src=2.jpg>";
-	var computerResult = computerChoice();
-	judge("scissors",computerResult);
-}
-function paper() {
-	r = 3 * Math.random();
-	document.getElementById("myChoice").innerHTML="<img src=3.jpg>";
-	var computerResult = computerChoice();
-	judge("paper",computerResult);
+function shitou() {
+	document.getElementById("myChoice").innerHTML="<img src='1.jpg'>";
+	var computerJieguo=computerchu();
+	if(computerJieguo=="shitou"){
+		document.getElementById("jieguo").innerHTML="平局";
+	}
+	else if(computerJieguo=="jiandao"){
+		document.getElementById("jieguo").innerHTML="赢了";
+	}
+	else if(computerJieguo=="bu"){
+		document.getElementById("jieguo").innerHTML="输了";
+	}
 }
 
-function judge(myChoice,computerResult) {
-	if(myChoice=="rock"){
-    if(computerResult=="rock"){
-		document.getElementById("result").innerHTML="draw";
+function jiandao() {
+	document.getElementById("myChoice").innerHTML="<img src='2.jpg'>";
+	var computerJieguo=computerchu();
+	if(computerJieguo=="shitou"){
+		document.getElementById("jieguo").innerHTML="输了";
 	}
-	else if(computerResult=="scissors"){
-		document.getElementById("result").innerHTML="win";
+	else if(computerJieguo=="jiandao"){
+		document.getElementById("jieguo").innerHTML="平局";
 	}
-	else if(computerResult=="paper"){
-		document.getElementById("result").innerHTML="lose";
+	else if(computerJieguo=="bu"){
+		document.getElementById("jieguo").innerHTML="赢了";
 	}
-	}
+}
 
-	else if(myChoice=="scissors"){
-    if(computerResult=="rock"){
-		document.getElementById("result").innerHTML="lose";
+function bu() {
+	document.getElementById("myChoice").innerHTML="<img src='3.jpg'>";
+	var computerJieguo=computerchu();
+	if(computerJieguo=="shitou"){
+		document.getElementById("jieguo").innerHTML="赢了";
 	}
-	else if(computerResult=="scissors"){
-		document.getElementById("result").innerHTML="draw";
+	else if(computerJieguo=="jiandao"){
+		document.getElementById("jieguo").innerHTML="输了";
 	}
-	else if(computerResult=="paper"){
-		document.getElementById("result").innerHTML="win";
+	else if(computerJieguo=="bu"){
+		document.getElementById("jieguo").innerHTML="平局";
 	}
-	}
-
-	else if(myChoice=="paper"){
-    if(computerResult=="rock"){
-		document.getElementById("result").innerHTML="win";
-	}
-	else if(computerResult=="scissors"){
-		document.getElementById("result").innerHTML="lose";
-	}
-	else if(computerResult=="paper"){
-		document.getElementById("result").innerHTML="draw";
-	}
-	}
-
 }
 
 function go(){
-	 
+	r = 3 * Math.random();
 }
-function computerChoice() {
+
+function computerchu() {
 	if(r<1){
-		document.getElementById("computerChoice").innerHTML="<img src=1.jpg>";
-		return "rock";
+		document.getElementById("computerChoice").innerHTML="<img src='1.jpg'>";
+		return "shitou";
 	}
 	else if (r<2) {
-		document.getElementById("computerChoice").innerHTML="<img src=2.jpg>";
-	    return "scissors";
+		document.getElementById("computerChoice").innerHTML="<img src='2.jpg'>";
+		return "jiandao";
 	}
-	else(){
-		document.getElementById("computerChoice").innerHTML="<img src=3.jpg>";
-	    return "paper";
+	else{
+		document.getElementById("computerChoice").innerHTML="<img src='3.jpg'>";
+	    return "bu";
 	}
 }
+
 </script>
 </html>
