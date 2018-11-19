@@ -1,21 +1,21 @@
 var r,score=0;
 function rock() {
 	
-	document.getElementById("myChoice").innerHTML="<img src='1.jpg'>";
+	document.getElementById("myChoice").innerHTML="<img src='images/1.jpg'>";
 	
 	judge("rock");
 }
 
 function scissors() {
 	
-	document.getElementById("myChoice").innerHTML="<img src='2.jpg'>";
+	document.getElementById("myChoice").innerHTML="<img src='images/2.jpg'>";
 	
 	judge("scissors");
 }
 
 function paper	() {
 	
-	document.getElementById("myChoice").innerHTML="<img src='3.jpg'>";
+	document.getElementById("myChoice").innerHTML="<img src='images/3.jpg'>";
 	
 	judge("paper");
 }
