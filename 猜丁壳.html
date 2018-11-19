@@ -27,7 +27,7 @@
     	margin-top:0;
     	text-align:center;
     }
-    #container>#result{
+    #container>#jieguo{
     	font-size:100px;
     	width:600px;
     	text-align:center;
@@ -59,7 +59,7 @@
 <script> 
 var r;
 function shitou() {
-	document.getElementById("myChoice").innerHTML="<img src='1.jpg'>";
+	document.getElementById("myChoice").innerHTML="<img src='images/1.jpg'>";
 	var computerJieguo=computerchu();
 	if(computerJieguo=="shitou"){
 		document.getElementById("jieguo").innerHTML="平局";
@@ -73,7 +73,7 @@ function shitou() {
 }
 
 function jiandao() {
-	document.getElementById("myChoice").innerHTML="<img src='2.jpg'>";
+	document.getElementById("myChoice").innerHTML="<img src='images/2.jpg'>";
 	var computerJieguo=computerchu();
 	if(computerJieguo=="shitou"){
 		document.getElementById("jieguo").innerHTML="输了";
@@ -87,7 +87,7 @@ function jiandao() {
 }
 
 function bu() {
-	document.getElementById("myChoice").innerHTML="<img src='3.jpg'>";
+	document.getElementById("myChoice").innerHTML="<img src='images/3.jpg'>";
 	var computerJieguo=computerchu();
 	if(computerJieguo=="shitou"){
 		document.getElementById("jieguo").innerHTML="赢了";
@@ -106,15 +106,15 @@ function go(){
 
 function computerchu() {
 	if(r<1){
-		document.getElementById("computerChoice").innerHTML="<img src='1.jpg'>";
+		document.getElementById("computerChoice").innerHTML="<img src='images/1.jpg'>";
 		return "shitou";
 	}
 	else if (r<2) {
-		document.getElementById("computerChoice").innerHTML="<img src='2.jpg'>";
+		document.getElementById("computerChoice").innerHTML="<img src='images/2.jpg'>";
 		return "jiandao";
 	}
 	else{
-		document.getElementById("computerChoice").innerHTML="<img src='3.jpg'>";
+		document.getElementById("computerChoice").innerHTML="<img src='images/3.jpg'>";
 	    return "bu";
 	}
 }
