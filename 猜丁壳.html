@@ -2,40 +2,9 @@
 <html>
 <head>
 	<title>剪刀石头布</title>
-	<style> 
-    #container{
-    	height:350px;
-    	width:600px;
-    	border:10px solid black;
-    	margin:0px auto;
-    }
-    #container>div{
-    	height:350px;
-    	width:300px;
-    	float:left;
-    }
-    #mine{
-    	background:lightgreen;
-    }
-    #computer{
-    	background:lightblue;
-    }
-    #computerChoice>IMG{
-    	transform:scaleX(-1);
-    }
-    h1{
-    	margin-top:0;
-    	text-align:center;
-    }
-    #container>#jieguo{
-    	font-size:100px;
-    	width:600px;
-    	text-align:center;
-    }
-	</style>
+	<link href="ys.css" rel="stylesheet"/>
 </head>
 <body onload="go()">
-<audio id="bgm" src="bgm/5.mp3" preload="preload" autoplay="autoplay" loop="loop"></audio>
 <div id="container"> 
      <div id="mine">
          <h1>我的出招</h1>  
@@ -54,70 +23,9 @@
          </div>
      </div>
      <div id="jieguo">来过翻两招</div>
+	
 </div>
+<audio id="bgm" src="bgm/5.mp3" preload="preload" autoplay="autoplay" loop="loop" controls="controls"></audio>
 </body>
-<script> 
-var r;
-function shitou() {
-	document.getElementById("myChoice").innerHTML="<img src='images/1.jpg'>";
-	var computerJieguo=computerchu();
-	if(computerJieguo=="shitou"){
-		document.getElementById("jieguo").innerHTML="平局";
-	}
-	else if(computerJieguo=="jiandao"){
-		document.getElementById("jieguo").innerHTML="赢了";
-	}
-	else if(computerJieguo=="bu"){
-		document.getElementById("jieguo").innerHTML="输了";
-	}
-}
-
-function jiandao() {
-	document.getElementById("myChoice").innerHTML="<img src='images/2.jpg'>";
-	var computerJieguo=computerchu();
-	if(computerJieguo=="shitou"){
-		document.getElementById("jieguo").innerHTML="输了";
-	}
-	else if(computerJieguo=="jiandao"){
-		document.getElementById("jieguo").innerHTML="平局";
-	}
-	else if(computerJieguo=="bu"){
-		document.getElementById("jieguo").innerHTML="赢了";
-	}
-}
-
-function bu() {
-	document.getElementById("myChoice").innerHTML="<img src='images/3.jpg'>";
-	var computerJieguo=computerchu();
-	if(computerJieguo=="shitou"){
-		document.getElementById("jieguo").innerHTML="赢了";
-	}
-	else if(computerJieguo=="jiandao"){
-		document.getElementById("jieguo").innerHTML="输了";
-	}
-	else if(computerJieguo=="bu"){
-		document.getElementById("jieguo").innerHTML="平局";
-	}
-}
-
-function go(){
-	r = 3 * Math.random();
-}
-
-function computerchu() {
-	if(r<1){
-		document.getElementById("computerChoice").innerHTML="<img src='images/1.jpg'>";
-		return "shitou";
-	}
-	else if (r<2) {
-		document.getElementById("computerChoice").innerHTML="<img src='images/2.jpg'>";
-		return "jiandao";
-	}
-	else{
-		document.getElementById("computerChoice").innerHTML="<img src='images/3.jpg'>";
-	    return "bu";
-	}
-}
-
-</script>
+<script src="js.js"> </script>
 </html>
