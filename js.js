@@ -61,8 +61,11 @@ function judge(myChoice) {
 	}
 	}
 	document.getElementById("result").innerHTML="积分："+score;
-	if(score>=10){
+	if(score=10){
 		document.getElementById("result").innerHTML="这么有耐心？牛批！牛批！";
+	}
+	else if(score=20){
+		document.getElementById("result").innerHTML="你能玩到这里，真的牛批！";
 	}
 }
 
