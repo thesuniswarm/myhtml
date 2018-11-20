@@ -73,15 +73,15 @@ function go(){
 
 function computerChoice() {
 	if(r<1){
-		document.getElementById("computerChoice").innerHTML="<img src='images/1.jpg'>";
+		document.getElementById("computerChoice").innerHTML="<img src='./images/1.jpg'>";
 		return "rock";
 	}
 	else if (r<2) {
-		document.getElementById("computerChoice").innerHTML="<img src='images/2.jpg'>";
+		document.getElementById("computerChoice").innerHTML="<img src='./images/2.jpg'>";
 		return "scissors";
 	}
 	else{
-		document.getElementById("computerChoice").innerHTML="<img src='images/3.jpg'>";
+		document.getElementById("computerChoice").innerHTML="<img src='./images/3.jpg'>";
 	    return "paper";
 	}
 }
